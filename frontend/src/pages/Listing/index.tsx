@@ -1,9 +1,19 @@
+import axios from "axios";
 import MovieCard from "componentes/MovieCard";
 import MovieScore from "componentes/MovieScore";
 import MovieStars from "componentes/MovieStars";
 import Pagination from "componentes/Pagination";
+import { BASE_URL } from "utils/requests";
 
 function Listing() {
+
+
+    //FORMA ERRADO
+    axios.get(`${BASE_URL}/movies?size=12&page=0`)
+        .then(response => {
+            console.log(response.data);
+        });
+
     return (
         <>
             <Pagination />
